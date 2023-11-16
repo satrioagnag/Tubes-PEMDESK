@@ -18,8 +18,18 @@ Public Class LoginKasir
         Next
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+    Private Sub btnTransaksi_Click(sender As Object, e As EventArgs) Handles btnTransaksi.Click
         Me.Hide()
         TransaksiPenjualan.Show()
     End Sub
+
+    Private Sub btnPembayaran_Click(sender As Object, e As EventArgs) Handles btnPembayaran.Click
+        Me.Hide()
+    End Sub
+
+    Private Sub LoginKasir_Load(sender As Object, e As EventArgs) Handles Me.Load
+        Dim currentDate As Date = DateTime.Now
+        tbDate.Text = currentDate.ToString()
+    End Sub
+
 End Class
