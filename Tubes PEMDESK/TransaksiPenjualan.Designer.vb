@@ -29,7 +29,7 @@ Partial Class TransaksiPenjualan
         Me.tbNamaKasir = New System.Windows.Forms.TextBox()
         Me.tbInvoice = New System.Windows.Forms.TextBox()
         Me.tbDate = New System.Windows.Forms.TextBox()
-        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
+        Me.cbMember = New System.Windows.Forms.ComboBox()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.cbProduk = New System.Windows.Forms.ComboBox()
         Me.Label6 = New System.Windows.Forms.Label()
@@ -41,6 +41,7 @@ Partial Class TransaksiPenjualan
         Me.tbTotal = New System.Windows.Forms.TextBox()
         Me.btTambah = New System.Windows.Forms.Button()
         Me.dgvPenjualan = New System.Windows.Forms.DataGridView()
+        Me.no_invoice = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.NamaBarang = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Harga = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Jumlah = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -53,7 +54,7 @@ Partial Class TransaksiPenjualan
         Me.tbDiskon = New System.Windows.Forms.TextBox()
         Me.tbGrand = New System.Windows.Forms.TextBox()
         Me.Label13 = New System.Windows.Forms.Label()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.btSelesai = New System.Windows.Forms.Button()
         CType(Me.dgvPenjualan, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -116,15 +117,15 @@ Partial Class TransaksiPenjualan
         Me.tbDate.Size = New System.Drawing.Size(128, 20)
         Me.tbDate.TabIndex = 6
         '
-        'ComboBox1
+        'cbMember
         '
-        Me.ComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Items.AddRange(New Object() {"Member", "Non-Member"})
-        Me.ComboBox1.Location = New System.Drawing.Point(521, 90)
-        Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(121, 21)
-        Me.ComboBox1.TabIndex = 7
+        Me.cbMember.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cbMember.FormattingEnabled = True
+        Me.cbMember.Items.AddRange(New Object() {"Member", "Non-Member"})
+        Me.cbMember.Location = New System.Drawing.Point(521, 90)
+        Me.cbMember.Name = "cbMember"
+        Me.cbMember.Size = New System.Drawing.Size(121, 21)
+        Me.cbMember.TabIndex = 7
         '
         'Label5
         '
@@ -216,11 +217,16 @@ Partial Class TransaksiPenjualan
         'dgvPenjualan
         '
         Me.dgvPenjualan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvPenjualan.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.NamaBarang, Me.Harga, Me.Jumlah, Me.Total, Me.btRemove})
+        Me.dgvPenjualan.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.no_invoice, Me.NamaBarang, Me.Harga, Me.Jumlah, Me.Total, Me.btRemove})
         Me.dgvPenjualan.Location = New System.Drawing.Point(175, 144)
         Me.dgvPenjualan.Name = "dgvPenjualan"
-        Me.dgvPenjualan.Size = New System.Drawing.Size(467, 150)
+        Me.dgvPenjualan.Size = New System.Drawing.Size(513, 150)
         Me.dgvPenjualan.TabIndex = 18
+        '
+        'no_invoice
+        '
+        Me.no_invoice.HeaderText = "No Invoice"
+        Me.no_invoice.Name = "no_invoice"
         '
         'NamaBarang
         '
@@ -307,22 +313,22 @@ Partial Class TransaksiPenjualan
         Me.Label13.TabIndex = 25
         Me.Label13.Text = "%"
         '
-        'Button1
+        'btSelesai
         '
-        Me.Button1.Location = New System.Drawing.Point(529, 365)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(113, 32)
-        Me.Button1.TabIndex = 26
-        Me.Button1.Text = "Buat Transaksi"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.btSelesai.Location = New System.Drawing.Point(529, 365)
+        Me.btSelesai.Name = "btSelesai"
+        Me.btSelesai.Size = New System.Drawing.Size(113, 32)
+        Me.btSelesai.TabIndex = 26
+        Me.btSelesai.Text = "Buat Transaksi"
+        Me.btSelesai.UseVisualStyleBackColor = True
         '
         'TransaksiPenjualan
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(726, 413)
-        Me.Controls.Add(Me.Button1)
+        Me.ClientSize = New System.Drawing.Size(734, 413)
+        Me.Controls.Add(Me.btSelesai)
         Me.Controls.Add(Me.Label13)
         Me.Controls.Add(Me.tbGrand)
         Me.Controls.Add(Me.tbDiskon)
@@ -341,7 +347,7 @@ Partial Class TransaksiPenjualan
         Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.cbProduk)
         Me.Controls.Add(Me.Label5)
-        Me.Controls.Add(Me.ComboBox1)
+        Me.Controls.Add(Me.cbMember)
         Me.Controls.Add(Me.tbDate)
         Me.Controls.Add(Me.tbInvoice)
         Me.Controls.Add(Me.tbNamaKasir)
@@ -364,7 +370,7 @@ Partial Class TransaksiPenjualan
     Friend WithEvents tbNamaKasir As TextBox
     Friend WithEvents tbInvoice As TextBox
     Friend WithEvents tbDate As TextBox
-    Friend WithEvents ComboBox1 As ComboBox
+    Friend WithEvents cbMember As ComboBox
     Friend WithEvents Label5 As Label
     Friend WithEvents cbProduk As ComboBox
     Friend WithEvents Label6 As Label
@@ -383,7 +389,8 @@ Partial Class TransaksiPenjualan
     Friend WithEvents tbDiskon As TextBox
     Friend WithEvents tbGrand As TextBox
     Friend WithEvents Label13 As Label
-    Friend WithEvents Button1 As Button
+    Friend WithEvents btSelesai As Button
+    Friend WithEvents no_invoice As DataGridViewTextBoxColumn
     Friend WithEvents NamaBarang As DataGridViewTextBoxColumn
     Friend WithEvents Harga As DataGridViewTextBoxColumn
     Friend WithEvents Jumlah As DataGridViewTextBoxColumn

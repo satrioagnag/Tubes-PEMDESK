@@ -4,6 +4,8 @@ Public Class LoginKasir
     Dim da As New MySqlDataAdapter
     Dim ds As New DataSet
 
+
+
     Sub koneksi()
         conn = New MySqlConnection("server= localhost" + ";user id=root" + "; password=" + "" + ";database=db_tubes")
     End Sub
@@ -30,6 +32,7 @@ Public Class LoginKasir
     Private Sub LoginKasir_Load(sender As Object, e As EventArgs) Handles Me.Load
         Dim currentDate As Date = DateTime.Now
         tbDate.Text = currentDate.ToString()
+        lb_Nama.Text = user
     End Sub
 
 End Class

@@ -3,6 +3,7 @@ Public Class Home
     Dim conn As New MySqlConnection
     Dim da As New MySqlDataAdapter
     Dim ds As New DataSet
+    Public nama_user As String
 
     Sub koneksi()
         conn = New MySqlConnection("server= localhost" + ";user id=root" + "; password=" + "" + ";database=db_tubes")
@@ -30,8 +31,8 @@ Public Class Home
         Try
             ds.Clear()
 
-            Dim user As String = tbUsername.Text
-            Dim pass As String = tbPassword.Text
+            user = tbUsername.Text
+            pass = tbPassword.Text
             da = New MySqlDataAdapter("select * from tbl_akun where username='" & user & "' AND pass='" & pass & "'", conn)
             da.Fill(ds, "akun")
 
@@ -51,6 +52,7 @@ Public Class Home
                     Me.Hide()
                     LoginOwner.Show()
                 End If
+
             Else
                 MessageBox.Show("Login Gagal!")
                 clear()
@@ -64,7 +66,6 @@ Public Class Home
     Private Sub Label7_Click(sender As Object, e As EventArgs) Handles Label7.Click
         Me.Hide()
         HomeSignup.Show()
-
 
     End Sub
 End Class

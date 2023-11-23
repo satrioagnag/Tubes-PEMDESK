@@ -45,7 +45,7 @@ Partial Class LoginKasir
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.Black
-        Me.Label2.Location = New System.Drawing.Point(92, 31)
+        Me.Label2.Location = New System.Drawing.Point(88, 31)
         Me.Label2.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(63, 20)
@@ -90,8 +90,8 @@ Partial Class LoginKasir
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.Panel1.Controls.Add(Me.Button1)
         Me.Panel1.Controls.Add(Me.lb_Nama)
+        Me.Panel1.Controls.Add(Me.Button1)
         Me.Panel1.Controls.Add(Me.Label2)
         Me.Panel1.Controls.Add(Me.btnPembayaran)
         Me.Panel1.Controls.Add(Me.btnTransaksi)
@@ -115,7 +115,7 @@ Partial Class LoginKasir
         '
         Me.lb_Nama.AutoSize = True
         Me.lb_Nama.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lb_Nama.Location = New System.Drawing.Point(87, 65)
+        Me.lb_Nama.Location = New System.Drawing.Point(83, 63)
         Me.lb_Nama.Name = "lb_Nama"
         Me.lb_Nama.Size = New System.Drawing.Size(72, 15)
         Me.lb_Nama.TabIndex = 10
