@@ -1,14 +1,5 @@
 ﻿Imports MySql.Data.MySqlClient
 Public Class Home
-    Dim conn As New MySqlConnection
-    Dim da As New MySqlDataAdapter
-    Dim ds As New DataSet
-    Public nama_user As String
-
-    Sub koneksi()
-        conn = New MySqlConnection("server= localhost" + ";user id=root" + "; password=" + "" + ";database=db_tubes")
-    End Sub
-
     Sub clear()
         For Each ctr In Me.Controls
             If TypeOf ctr Is TextBox Then
@@ -46,6 +37,7 @@ Public Class Home
                     Me.Hide()
                     LoginAdmin.Show()
                 ElseIf tier = "KASIR" Then
+
                     Me.Hide()
                     LoginKasir.Show()
                 Else

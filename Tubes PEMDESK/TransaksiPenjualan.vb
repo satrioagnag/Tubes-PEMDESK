@@ -1,12 +1,6 @@
 ﻿Imports MySql.Data.MySqlClient
 Public Class TransaksiPenjualan
 
-
-
-    Sub koneksi()
-        conn = New MySqlConnection("server= localhost" + ";user id=root" + "; password=" + "" + ";database=db_tubes")
-    End Sub
-
     Sub clear()
         For Each ctr In Me.Controls
             If TypeOf ctr Is TextBox Then
@@ -56,6 +50,7 @@ Public Class TransaksiPenjualan
             koneksi()
             isi_combobox()
             invoice()
+            tbNamaKasir.Text = user
         Catch ex As Exception
             MessageBox.Show(ex.Message, "Terjadi Kesalahan", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
@@ -82,15 +77,62 @@ Public Class TransaksiPenjualan
     End Sub
 
     Private Sub btTambah_Click(sender As Object, e As EventArgs) Handles btTambah.Click
-        dgvPenjualan.Rows.Add(tbInvoice.Text, nama_item, harga_item, jumlah_item, total_item)
 
-        For Each row As DataGridViewRow In dgvPenjualan.Rows
-            If row.Cells("Total").Value IsNot Nothing Then
-                subtotal += row.Cells("Total").Value
+        Try
+            Dim existingRow As DataGridViewRow = Nothing
+
+            For Each row As DataGridViewRow In dgvPenjualan.Rows
+                If row.Cells("NamaBarang").Value IsNot Nothing AndAlso row.Cells("NamaBarang").Value.ToString() = nama_item Then
+                    existingRow = row
+                    Exit For
+                End If
+            Next
+
+            ds.Clear()
+            da = New MySqlDataAdapter("SELECT stock FROM tbl_barang WHERE nama_barang='" & nama_item & "'", conn)
+            da.Fill(ds, "barang")
+            Dim stock As Integer = Integer.Parse(ds.Tables("barang").Rows(0).Item("stock"))
+
+            If stock > 0 Then
+                stock -= jumlah_item
+
+                If existingRow IsNot Nothing Then
+
+                    Dim jumlah As Integer = Integer.Parse(existingRow.Cells("jumlah").Value) + Integer.Parse(tbJumlah.Text)
+                    existingRow.Cells("jumlah").Value = jumlah
+
+                    Dim harga As Integer = Integer.Parse(existingRow.Cells("harga").Value)
+                    existingRow.Cells("subtotal").Value = jumlah * harga
+                Else
+                    ds.Clear()
+                    da = New MySqlDataAdapter("select harga from tbl_barang where nama_barang='" & cbProduk.SelectedItem.ToString() & "'", conn)
+                    da.Fill(ds, "harga")
+                    Dim harga As Integer = Integer.Parse(ds.Tables("harga").Rows(0).Item(0))
+                    Dim jumlah As Integer = Integer.Parse(tbJumlah.Text)
+                    Dim subtotal As Integer = jumlah * harga
+                    dgvPenjualan.Rows.Add(tbInvoice.Text, nama_item, harga_item, jumlah_item, total_item)
+                End If
+
+                For Each row As DataGridViewRow In dgvPenjualan.Rows
+                    If row.Cells("Total").Value IsNot Nothing Then
+                        subtotal += row.Cells("Total").Value
+                    End If
+                Next
+
+                tbSubtotal.Text = subtotal
+
+                da = New MySqlDataAdapter("UPDATE tbl_barang SET stock='" & stock & "' WHERE nama_barang='" & nama_item & "'", conn)
+                da.Fill(ds, "stock")
+
+            Else
+                MessageBox.Show("Stok habis")
             End If
-        Next
 
-        tbSubtotal.Text = subtotal
+        Catch ex As Exception
+            MessageBox.Show(ex.Message, "Terjadi Kesalahan", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
+
+
     End Sub
 
     Private Sub tbDiskon_TextChanged(sender As Object, e As EventArgs) Handles tbDiskon.TextChanged
@@ -113,10 +155,12 @@ Public Class TransaksiPenjualan
 
     Private Sub btSelesai_Click(sender As Object, e As EventArgs) Handles btSelesai.Click
         Dim result As DialogResult = MessageBox.Show("Apakah anda yakin ingin memproses pesanan?",
-                                                          "Konfirmasi Hapus", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
-        noInvoice = tbInvoice.Text
+                                                          "Konfirmasi Proses", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+
         Try
+
             If result = DialogResult.Yes Then
+                noInvoice = tbInvoice.Text
                 ds.Clear()
                 da = New MySqlDataAdapter("insert into tbl_transaksi Values (?,?,?)", conn)
                 da.SelectCommand.Parameters.AddWithValue("no_invoice", tbInvoice.Text)
@@ -125,10 +169,30 @@ Public Class TransaksiPenjualan
                 da.Fill(ds, "transaksi")
                 ds.Clear()
 
+                For i As Integer = 0 To dgvPenjualan.Rows.Count - 1
+                    Dim jumlah As Integer = dgvPenjualan.Rows(i).Cells("jumlah").Value
+                    ds.Clear()
+                    da = New MySqlDataAdapter("select id_barang from tbl_barang where nama_barang='" & nama_item & "'", conn)
+                    da.Fill(ds, "barang")
+                    If ds.Tables("barang").Rows.Count > 0 Then
+                        id_item = ds.Tables("barang").Rows(0).Item(0)
+                        If Not (Jumlah = 0 OrElse subtotal = 0) Then
+                            ds.Clear()
+                            da = New MySqlDataAdapter("insert into tbl_detailtrx (no_invoice, id_barang, jumlah, subtotal) values (?,?,?,?)", conn)
+                            da.SelectCommand.Parameters.AddWithValue("no_invoice", noInvoice)
+                            da.SelectCommand.Parameters.AddWithValue("id_barang", id_item)
+                            da.SelectCommand.Parameters.AddWithValue("jumlah", Jumlah)
+                            da.SelectCommand.Parameters.AddWithValue("subtotal", grand)
+                            da.Fill(ds, "detail")
+                        End If
+                    End If
+                Next
+                Me.Hide()
+
+                Pembayaran.Show()
             End If
 
-            Me.Hide()
-            Pembayaran.Show()
+
 
         Catch ex As Exception
             MessageBox.Show(ex.Message, "Terjadi Kesalahan", MessageBoxButtons.OK, MessageBoxIcon.Error)

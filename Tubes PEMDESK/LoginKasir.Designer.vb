@@ -27,8 +27,8 @@ Partial Class LoginKasir
         Me.Label1 = New System.Windows.Forms.Label()
         Me.btnPembayaran = New System.Windows.Forms.Button()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.Button1 = New System.Windows.Forms.Button()
         Me.lb_Nama = New System.Windows.Forms.Label()
+        Me.bt_logout = New System.Windows.Forms.Button()
         Me.lb_date = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
@@ -91,7 +91,7 @@ Partial Class LoginKasir
         '
         Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.Panel1.Controls.Add(Me.lb_Nama)
-        Me.Panel1.Controls.Add(Me.Button1)
+        Me.Panel1.Controls.Add(Me.bt_logout)
         Me.Panel1.Controls.Add(Me.Label2)
         Me.Panel1.Controls.Add(Me.btnPembayaran)
         Me.Panel1.Controls.Add(Me.btnTransaksi)
@@ -100,16 +100,6 @@ Partial Class LoginKasir
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(248, 413)
         Me.Panel1.TabIndex = 9
-        '
-        'Button1
-        '
-        Me.Button1.BackColor = System.Drawing.Color.DeepPink
-        Me.Button1.Location = New System.Drawing.Point(25, 359)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(75, 23)
-        Me.Button1.TabIndex = 10
-        Me.Button1.Text = "Logout"
-        Me.Button1.UseVisualStyleBackColor = False
         '
         'lb_Nama
         '
@@ -120,6 +110,16 @@ Partial Class LoginKasir
         Me.lb_Nama.Size = New System.Drawing.Size(72, 15)
         Me.lb_Nama.TabIndex = 10
         Me.lb_Nama.Text = "Nama Kasir"
+        '
+        'bt_logout
+        '
+        Me.bt_logout.BackColor = System.Drawing.Color.DeepPink
+        Me.bt_logout.Location = New System.Drawing.Point(25, 359)
+        Me.bt_logout.Name = "bt_logout"
+        Me.bt_logout.Size = New System.Drawing.Size(75, 23)
+        Me.bt_logout.TabIndex = 10
+        Me.bt_logout.Text = "Logout"
+        Me.bt_logout.UseVisualStyleBackColor = False
         '
         'lb_date
         '
@@ -213,7 +213,7 @@ Partial Class LoginKasir
     Friend WithEvents Label1 As Label
     Friend WithEvents btnPembayaran As Button
     Friend WithEvents Panel1 As Panel
-    Friend WithEvents Button1 As Button
+    Friend WithEvents bt_logout As Button
     Friend WithEvents lb_Nama As Label
     Friend WithEvents lb_date As Label
     Friend WithEvents Label3 As Label

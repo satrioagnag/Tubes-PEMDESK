@@ -35,4 +35,9 @@ Public Class LoginKasir
         lb_Nama.Text = user
     End Sub
 
+    Private Sub bt_logout_Click(sender As Object, e As EventArgs) Handles bt_logout.Click
+        Me.Close()
+        Me.Hide()
+        Home.Show()
+    End Sub
 End Class

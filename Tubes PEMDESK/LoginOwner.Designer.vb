@@ -24,8 +24,9 @@ Partial Class LoginOwner
     Private Sub InitializeComponent()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Button3 = New System.Windows.Forms.Button()
-        Me.Button2 = New System.Windows.Forms.Button()
+        Me.bt_reportJual = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
+        Me.bt_logout = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'Label2
@@ -53,18 +54,18 @@ Partial Class LoginOwner
         Me.Button3.Text = "Laporan Stok"
         Me.Button3.UseVisualStyleBackColor = False
         '
-        'Button2
+        'bt_reportJual
         '
-        Me.Button2.BackColor = System.Drawing.Color.DeepPink
-        Me.Button2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button2.ForeColor = System.Drawing.SystemColors.ButtonFace
-        Me.Button2.Location = New System.Drawing.Point(168, 154)
-        Me.Button2.Margin = New System.Windows.Forms.Padding(2)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(196, 36)
-        Me.Button2.TabIndex = 10
-        Me.Button2.Text = "Laporan Penjualan"
-        Me.Button2.UseVisualStyleBackColor = False
+        Me.bt_reportJual.BackColor = System.Drawing.Color.DeepPink
+        Me.bt_reportJual.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.bt_reportJual.ForeColor = System.Drawing.SystemColors.ButtonFace
+        Me.bt_reportJual.Location = New System.Drawing.Point(168, 154)
+        Me.bt_reportJual.Margin = New System.Windows.Forms.Padding(2)
+        Me.bt_reportJual.Name = "bt_reportJual"
+        Me.bt_reportJual.Size = New System.Drawing.Size(196, 36)
+        Me.bt_reportJual.TabIndex = 10
+        Me.bt_reportJual.Text = "Laporan Penjualan"
+        Me.bt_reportJual.UseVisualStyleBackColor = False
         '
         'Button1
         '
@@ -79,15 +80,26 @@ Partial Class LoginOwner
         Me.Button1.Text = "Kontrol Staff"
         Me.Button1.UseVisualStyleBackColor = False
         '
+        'bt_logout
+        '
+        Me.bt_logout.BackColor = System.Drawing.Color.Red
+        Me.bt_logout.Location = New System.Drawing.Point(12, 257)
+        Me.bt_logout.Name = "bt_logout"
+        Me.bt_logout.Size = New System.Drawing.Size(75, 23)
+        Me.bt_logout.TabIndex = 13
+        Me.bt_logout.Text = "Logout"
+        Me.bt_logout.UseVisualStyleBackColor = False
+        '
         'LoginOwner
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Orchid
         Me.ClientSize = New System.Drawing.Size(533, 292)
+        Me.Controls.Add(Me.bt_logout)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Button3)
-        Me.Controls.Add(Me.Button2)
+        Me.Controls.Add(Me.bt_reportJual)
         Me.Controls.Add(Me.Button1)
         Me.Name = "LoginOwner"
         Me.Text = "LoginOwner"
@@ -98,6 +110,7 @@ Partial Class LoginOwner
 
     Friend WithEvents Label2 As Label
     Friend WithEvents Button3 As Button
-    Friend WithEvents Button2 As Button
+    Friend WithEvents bt_reportJual As Button
     Friend WithEvents Button1 As Button
+    Friend WithEvents bt_logout As Button
 End Class

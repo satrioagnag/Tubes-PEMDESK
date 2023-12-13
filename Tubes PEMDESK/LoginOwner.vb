@@ -1,12 +1,5 @@
 ﻿Imports MySql.Data.MySqlClient
 Public Class LoginOwner
-    Dim conn As New MySqlConnection
-    Dim da As New MySqlDataAdapter
-    Dim ds As New DataSet
-
-    Sub koneksi()
-        conn = New MySqlConnection("server= localhost" + ";user id=root" + "; password=" + "" + ";database=db_tubes")
-    End Sub
 
     Sub clear()
         For Each ctr In Me.Controls
@@ -16,5 +9,16 @@ Public Class LoginOwner
                 DirectCast(ctr, ComboBox).SelectedItem = Nothing
             End If
         Next
+    End Sub
+
+    Private Sub bt_reportJual_Click(sender As Object, e As EventArgs) Handles bt_reportJual.Click
+        Me.Hide()
+        FormReportBulanan.Show()
+    End Sub
+
+    Private Sub bt_logout_Click(sender As Object, e As EventArgs) Handles bt_logout.Click
+        Me.Close()
+
+        Home.Show()
     End Sub
 End Class

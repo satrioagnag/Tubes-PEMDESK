@@ -27,19 +27,19 @@ Partial Class Pembayaran
         Me.tbInvoice = New System.Windows.Forms.TextBox()
         Me.tbMember = New System.Windows.Forms.TextBox()
         Me.dgvPembelian = New System.Windows.Forms.DataGridView()
+        Me.nama_barang = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.harga = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Jumlah = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.total = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.tbGrand = New System.Windows.Forms.TextBox()
-        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
+        Me.cbMethod = New System.Windows.Forms.ComboBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.tbBayar = New System.Windows.Forms.TextBox()
         Me.tbKembali = New System.Windows.Forms.TextBox()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.btSimpan = New System.Windows.Forms.Button()
-        Me.nama_barang = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.harga = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Jumlah = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.total = New System.Windows.Forms.DataGridViewTextBoxColumn()
         CType(Me.dgvPembelian, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -86,6 +86,26 @@ Partial Class Pembayaran
         Me.dgvPembelian.Size = New System.Drawing.Size(361, 218)
         Me.dgvPembelian.TabIndex = 4
         '
+        'nama_barang
+        '
+        Me.nama_barang.HeaderText = "Nama Barang"
+        Me.nama_barang.Name = "nama_barang"
+        '
+        'harga
+        '
+        Me.harga.HeaderText = "Harga"
+        Me.harga.Name = "harga"
+        '
+        'Jumlah
+        '
+        Me.Jumlah.HeaderText = "Jumlah"
+        Me.Jumlah.Name = "Jumlah"
+        '
+        'total
+        '
+        Me.total.HeaderText = "Total"
+        Me.total.Name = "total"
+        '
         'Label3
         '
         Me.Label3.AutoSize = True
@@ -102,14 +122,14 @@ Partial Class Pembayaran
         Me.tbGrand.Size = New System.Drawing.Size(100, 20)
         Me.tbGrand.TabIndex = 6
         '
-        'ComboBox1
+        'cbMethod
         '
-        Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Items.AddRange(New Object() {"Cash", "Card", "QRIS"})
-        Me.ComboBox1.Location = New System.Drawing.Point(450, 133)
-        Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(100, 21)
-        Me.ComboBox1.TabIndex = 7
+        Me.cbMethod.FormattingEnabled = True
+        Me.cbMethod.Items.AddRange(New Object() {"Cash", "Card", "QRIS"})
+        Me.cbMethod.Location = New System.Drawing.Point(450, 133)
+        Me.cbMethod.Name = "cbMethod"
+        Me.cbMethod.Size = New System.Drawing.Size(100, 21)
+        Me.cbMethod.TabIndex = 7
         '
         'Label4
         '
@@ -162,26 +182,6 @@ Partial Class Pembayaran
         Me.btSimpan.Text = "Simpan"
         Me.btSimpan.UseVisualStyleBackColor = True
         '
-        'nama_barang
-        '
-        Me.nama_barang.HeaderText = "Nama Barang"
-        Me.nama_barang.Name = "nama_barang"
-        '
-        'harga
-        '
-        Me.harga.HeaderText = "Harga"
-        Me.harga.Name = "harga"
-        '
-        'Jumlah
-        '
-        Me.Jumlah.HeaderText = "Jumlah"
-        Me.Jumlah.Name = "Jumlah"
-        '
-        'total
-        '
-        Me.total.HeaderText = "Total"
-        Me.total.Name = "total"
-        '
         'Pembayaran
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -194,7 +194,7 @@ Partial Class Pembayaran
         Me.Controls.Add(Me.tbBayar)
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.Label4)
-        Me.Controls.Add(Me.ComboBox1)
+        Me.Controls.Add(Me.cbMethod)
         Me.Controls.Add(Me.tbGrand)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.dgvPembelian)
@@ -217,7 +217,7 @@ Partial Class Pembayaran
     Friend WithEvents dgvPembelian As DataGridView
     Friend WithEvents Label3 As Label
     Friend WithEvents tbGrand As TextBox
-    Friend WithEvents ComboBox1 As ComboBox
+    Friend WithEvents cbMethod As ComboBox
     Friend WithEvents Label4 As Label
     Friend WithEvents Label5 As Label
     Friend WithEvents tbBayar As TextBox

@@ -1,8 +1,5 @@
 ﻿Imports MySql.Data.MySqlClient
 Public Class Pembayaran
-    Sub koneksi()
-        conn = New MySqlConnection("server= localhost" + ";user id=root" + "; password=" + "" + ";database=db_tubes")
-    End Sub
 
     Sub clear()
         For Each ctr In Me.Controls
@@ -34,5 +31,25 @@ Public Class Pembayaran
             kembali = 0
             tbKembali.Text = kembali
         End If
+    End Sub
+
+    Private Sub btSimpan_Click(sender As Object, e As EventArgs) Handles btSimpan.Click
+        Try
+            method = cbMethod.SelectedItem
+            jumlah_bayar = tbBayar.Text
+            kembalian = tbKembali.Text
+            ds.Clear()
+            da = New MySqlDataAdapter("insert into tbl_pembayaran (no_invoice, method_bayar, jumlah_bayar, kembalian) values (?,?,?,?)", conn)
+            da.SelectCommand.Parameters.AddWithValue("no_invoice", noInvoice)
+            da.SelectCommand.Parameters.AddWithValue("method_bayar", method)
+            da.SelectCommand.Parameters.AddWithValue("jumlah_bayar", jumlah_bayar)
+            da.SelectCommand.Parameters.AddWithValue("kembalian", kembalian)
+            da.Fill(ds, "bayar")
+
+            Me.Hide()
+            LoginKasir.Show()
+        Catch ex As Exception
+            MessageBox.Show(ex.Message, "Terjadi Kesalahan", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
     End Sub
 End Class

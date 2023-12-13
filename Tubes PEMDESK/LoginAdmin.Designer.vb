@@ -25,6 +25,7 @@ Partial Class LoginAdmin
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
+        Me.bt_logout = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'Label2
@@ -65,12 +66,23 @@ Partial Class LoginAdmin
         Me.Button1.Text = "Histori Penjualan"
         Me.Button1.UseVisualStyleBackColor = False
         '
+        'bt_logout
+        '
+        Me.bt_logout.BackColor = System.Drawing.Color.Red
+        Me.bt_logout.Location = New System.Drawing.Point(12, 257)
+        Me.bt_logout.Name = "bt_logout"
+        Me.bt_logout.Size = New System.Drawing.Size(75, 23)
+        Me.bt_logout.TabIndex = 10
+        Me.bt_logout.Text = "Logout"
+        Me.bt_logout.UseVisualStyleBackColor = False
+        '
         'LoginAdmin
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Orchid
         Me.ClientSize = New System.Drawing.Size(533, 292)
+        Me.Controls.Add(Me.bt_logout)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.Button1)
@@ -84,4 +96,5 @@ Partial Class LoginAdmin
     Friend WithEvents Label2 As Label
     Friend WithEvents Button2 As Button
     Friend WithEvents Button1 As Button
+    Friend WithEvents bt_logout As Button
 End Class
