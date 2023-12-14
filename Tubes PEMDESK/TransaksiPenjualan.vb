@@ -113,6 +113,7 @@ Public Class TransaksiPenjualan
                     dgvPenjualan.Rows.Add(tbInvoice.Text, nama_item, harga_item, jumlah_item, total_item)
                 End If
 
+                subtotal = 0
                 For Each row As DataGridViewRow In dgvPenjualan.Rows
                     If row.Cells("Total").Value IsNot Nothing Then
                         subtotal += row.Cells("Total").Value
@@ -164,13 +165,15 @@ Public Class TransaksiPenjualan
                 ds.Clear()
                 da = New MySqlDataAdapter("insert into tbl_transaksi Values (?,?,?)", conn)
                 da.SelectCommand.Parameters.AddWithValue("no_invoice", tbInvoice.Text)
-                da.SelectCommand.Parameters.AddWithValue("total", total_item)
+                da.SelectCommand.Parameters.AddWithValue("total", grand)
                 da.SelectCommand.Parameters.AddWithValue("tanggal_transaksi", tanggalTransaksi)
                 da.Fill(ds, "transaksi")
                 ds.Clear()
 
                 For i As Integer = 0 To dgvPenjualan.Rows.Count - 1
                     Dim jumlah As Integer = dgvPenjualan.Rows(i).Cells("jumlah").Value
+                    total_item = dgvPenjualan.Rows(i).Cells("Total").Value
+                    nama_item = dgvPenjualan.Rows(i).Cells("namaBarang").Value
                     ds.Clear()
                     da = New MySqlDataAdapter("select id_barang from tbl_barang where nama_barang='" & nama_item & "'", conn)
                     da.Fill(ds, "barang")
@@ -182,7 +185,7 @@ Public Class TransaksiPenjualan
                             da.SelectCommand.Parameters.AddWithValue("no_invoice", noInvoice)
                             da.SelectCommand.Parameters.AddWithValue("id_barang", id_item)
                             da.SelectCommand.Parameters.AddWithValue("jumlah", Jumlah)
-                            da.SelectCommand.Parameters.AddWithValue("subtotal", grand)
+                            da.SelectCommand.Parameters.AddWithValue("subtotal", total_item)
                             da.Fill(ds, "detail")
                         End If
                     End If

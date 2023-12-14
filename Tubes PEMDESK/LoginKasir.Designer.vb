@@ -36,6 +36,10 @@ Partial Class LoginKasir
         Me.tbPenjualan = New System.Windows.Forms.TextBox()
         Me.tbDate = New System.Windows.Forms.TextBox()
         Me.dgvPenjualanToday = New System.Windows.Forms.DataGridView()
+        Me.NamaBarang = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Harga = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Jumlah = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Total = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel1.SuspendLayout()
         CType(Me.dgvPenjualanToday, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -178,10 +182,31 @@ Partial Class LoginKasir
         'dgvPenjualanToday
         '
         Me.dgvPenjualanToday.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvPenjualanToday.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.NamaBarang, Me.Harga, Me.Jumlah, Me.Total})
         Me.dgvPenjualanToday.Location = New System.Drawing.Point(273, 165)
         Me.dgvPenjualanToday.Name = "dgvPenjualanToday"
         Me.dgvPenjualanToday.Size = New System.Drawing.Size(421, 150)
         Me.dgvPenjualanToday.TabIndex = 17
+        '
+        'NamaBarang
+        '
+        Me.NamaBarang.HeaderText = "Nama Barang"
+        Me.NamaBarang.Name = "NamaBarang"
+        '
+        'Harga
+        '
+        Me.Harga.HeaderText = "Harga"
+        Me.Harga.Name = "Harga"
+        '
+        'Jumlah
+        '
+        Me.Jumlah.HeaderText = "Jumlah"
+        Me.Jumlah.Name = "Jumlah"
+        '
+        'Total
+        '
+        Me.Total.HeaderText = "Total"
+        Me.Total.Name = "Total"
         '
         'LoginKasir
         '
@@ -222,4 +247,8 @@ Partial Class LoginKasir
     Friend WithEvents tbPenjualan As TextBox
     Friend WithEvents tbDate As TextBox
     Friend WithEvents dgvPenjualanToday As DataGridView
+    Friend WithEvents NamaBarang As DataGridViewTextBoxColumn
+    Friend WithEvents Harga As DataGridViewTextBoxColumn
+    Friend WithEvents Jumlah As DataGridViewTextBoxColumn
+    Friend WithEvents Total As DataGridViewTextBoxColumn
 End Class

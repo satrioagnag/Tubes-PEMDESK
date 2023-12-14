@@ -11,7 +11,31 @@ Public Class Pembayaran
         Next
     End Sub
     Private Sub Pembayaran_Load(sender As Object, e As EventArgs) Handles Me.Load
-        dgvPembelian.Rows.Add(nama_item, harga_item, jumlah_item, total_item)
+        'ambil dari database tbl_detailtrx, dengan comman select * from tbl_detailtrx where invoice = 
+        ds.Clear()
+        da = New MySqlDataAdapter("SELECT
+                                        b.nama_barang AS nama_barang,
+                                        dt.jumlah As jumlah,
+                                        b.harga AS harga,
+                                        dt.subtotal AS subtotal
+                                    FROM
+        tbl_transaksi t
+                                    JOIN
+        tbl_detailtrx dt ON t.no_invoice = dt.no_invoice
+                                    JOIN
+        tbl_barang b ON dt.id_barang = b.id_barang
+                                    WHERE dt.no_invoice ='" & noInvoice & "'", conn)
+        da.Fill(ds, "detail")
+        dgvPembelian.Rows.Clear()
+        For i As Integer = 0 To ds.Tables("detail").Rows.Count - 1
+            dgvPembelian.Rows.Add(ds.Tables("detail").Rows(i).Item(0).ToString,
+                                  ds.Tables("detail").Rows(i).Item(2).ToString,
+                                  ds.Tables("detail").Rows(i).Item(1).ToString,
+                                  ds.Tables("detail").Rows(i).Item(3).ToString)
+
+
+        Next
+
         tbMember.Text = statusCust
         tbInvoice.Text = noInvoice
         tbGrand.Text = grand
