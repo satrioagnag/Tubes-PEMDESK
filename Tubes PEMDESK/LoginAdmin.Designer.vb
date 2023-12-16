@@ -23,8 +23,8 @@ Partial Class LoginAdmin
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.Button2 = New System.Windows.Forms.Button()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.btn_barang = New System.Windows.Forms.Button()
+        Me.btn_riwayat = New System.Windows.Forms.Button()
         Me.bt_logout = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
@@ -40,31 +40,31 @@ Partial Class LoginAdmin
         Me.Label2.TabIndex = 9
         Me.Label2.Text = "ADMIN"
         '
-        'Button2
+        'btn_barang
         '
-        Me.Button2.BackColor = System.Drawing.Color.DeepPink
-        Me.Button2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button2.ForeColor = System.Drawing.SystemColors.ButtonFace
-        Me.Button2.Location = New System.Drawing.Point(168, 185)
-        Me.Button2.Margin = New System.Windows.Forms.Padding(2)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(196, 36)
-        Me.Button2.TabIndex = 8
-        Me.Button2.Text = "Stok Barang"
-        Me.Button2.UseVisualStyleBackColor = False
+        Me.btn_barang.BackColor = System.Drawing.Color.DeepPink
+        Me.btn_barang.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_barang.ForeColor = System.Drawing.SystemColors.ButtonFace
+        Me.btn_barang.Location = New System.Drawing.Point(168, 185)
+        Me.btn_barang.Margin = New System.Windows.Forms.Padding(2)
+        Me.btn_barang.Name = "btn_barang"
+        Me.btn_barang.Size = New System.Drawing.Size(196, 36)
+        Me.btn_barang.TabIndex = 8
+        Me.btn_barang.Text = "Stok Barang"
+        Me.btn_barang.UseVisualStyleBackColor = False
         '
-        'Button1
+        'btn_riwayat
         '
-        Me.Button1.BackColor = System.Drawing.Color.DeepPink
-        Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.ForeColor = System.Drawing.SystemColors.ButtonFace
-        Me.Button1.Location = New System.Drawing.Point(168, 127)
-        Me.Button1.Margin = New System.Windows.Forms.Padding(2)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(196, 36)
-        Me.Button1.TabIndex = 7
-        Me.Button1.Text = "Histori Penjualan"
-        Me.Button1.UseVisualStyleBackColor = False
+        Me.btn_riwayat.BackColor = System.Drawing.Color.DeepPink
+        Me.btn_riwayat.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_riwayat.ForeColor = System.Drawing.SystemColors.ButtonFace
+        Me.btn_riwayat.Location = New System.Drawing.Point(168, 127)
+        Me.btn_riwayat.Margin = New System.Windows.Forms.Padding(2)
+        Me.btn_riwayat.Name = "btn_riwayat"
+        Me.btn_riwayat.Size = New System.Drawing.Size(196, 36)
+        Me.btn_riwayat.TabIndex = 7
+        Me.btn_riwayat.Text = "Riwayat Penjualan"
+        Me.btn_riwayat.UseVisualStyleBackColor = False
         '
         'bt_logout
         '
@@ -84,8 +84,8 @@ Partial Class LoginAdmin
         Me.ClientSize = New System.Drawing.Size(533, 292)
         Me.Controls.Add(Me.bt_logout)
         Me.Controls.Add(Me.Label2)
-        Me.Controls.Add(Me.Button2)
-        Me.Controls.Add(Me.Button1)
+        Me.Controls.Add(Me.btn_barang)
+        Me.Controls.Add(Me.btn_riwayat)
         Me.Name = "LoginAdmin"
         Me.Text = "LoginAdmin"
         Me.ResumeLayout(False)
@@ -94,7 +94,7 @@ Partial Class LoginAdmin
     End Sub
 
     Friend WithEvents Label2 As Label
-    Friend WithEvents Button2 As Button
-    Friend WithEvents Button1 As Button
+    Friend WithEvents btn_barang As Button
+    Friend WithEvents btn_riwayat As Button
     Friend WithEvents bt_logout As Button
 End Class

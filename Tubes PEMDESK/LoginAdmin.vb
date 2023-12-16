@@ -23,4 +23,9 @@ Public Class LoginAdmin
         Me.Close()
         Home.Show()
     End Sub
+
+    Private Sub btn_barang_Click(sender As Object, e As EventArgs) Handles btn_barang.Click
+        Me.Hide()
+        MasterBarang.Show()
+    End Sub
 End Class

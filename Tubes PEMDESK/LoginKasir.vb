@@ -24,10 +24,12 @@ Public Class LoginKasir
 
     Sub Penjualan()
         ds.Clear()
-        da = New MySqlDataAdapter("select sum(total) from tbl_transaksi where date(tanggal_transaksi) = curdate()", conn)
+        da = New MySqlDataAdapter("SELECT IFNULL(SUM(total), 0) FROM tbl_transaksi WHERE DATE(tanggal_transaksi) = CURDATE()", conn)
         da.Fill(ds, "penjualan")
-        If ds.Tables("penjualan").Rows.Count > 0 Then
+        If ds.Tables("penjualan").Rows.Count > 0  Then
             tbPenjualan.Text = ds.Tables("penjualan").Rows(0).Item(0)
+        Else
+            tbPenjualan.Text = ""
         End If
     End Sub
 
