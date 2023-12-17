@@ -72,6 +72,8 @@ Public Class Pembayaran
 
             Me.Hide()
             LoginKasir.Show()
+            Me.Dispose()
+            struk.Show()
         Catch ex As Exception
             MessageBox.Show(ex.Message, "Terjadi Kesalahan", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try

@@ -32,10 +32,10 @@ Partial Class HomeSignup
         Me.tbPassword = New System.Windows.Forms.TextBox()
         Me.tbUsername = New System.Windows.Forms.TextBox()
         Me.Splitter1 = New System.Windows.Forms.Splitter()
-        Me.tbTier = New System.Windows.Forms.TextBox()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
+        Me.cbRole = New System.Windows.Forms.ComboBox()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -143,13 +143,6 @@ Partial Class HomeSignup
         Me.Splitter1.TabIndex = 35
         Me.Splitter1.TabStop = False
         '
-        'tbTier
-        '
-        Me.tbTier.Location = New System.Drawing.Point(299, 236)
-        Me.tbTier.Name = "tbTier"
-        Me.tbTier.Size = New System.Drawing.Size(267, 20)
-        Me.tbTier.TabIndex = 43
-        '
         'Label8
         '
         Me.Label8.AutoSize = True
@@ -157,9 +150,9 @@ Partial Class HomeSignup
         Me.Label8.ForeColor = System.Drawing.Color.IndianRed
         Me.Label8.Location = New System.Drawing.Point(155, 232)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(58, 23)
+        Me.Label8.Size = New System.Drawing.Size(62, 23)
         Me.Label8.TabIndex = 44
-        Me.Label8.Text = "TIER"
+        Me.Label8.Text = "ROLE"
         '
         'Label7
         '
@@ -189,16 +182,25 @@ Partial Class HomeSignup
         Me.Label6.Text = "Sudah punya akun?"
         Me.Label6.TextAlign = System.Drawing.ContentAlignment.TopCenter
         '
+        'cbRole
+        '
+        Me.cbRole.FormattingEnabled = True
+        Me.cbRole.Items.AddRange(New Object() {"KASIR", "ADMIN", "OWNER"})
+        Me.cbRole.Location = New System.Drawing.Point(299, 234)
+        Me.cbRole.Name = "cbRole"
+        Me.cbRole.Size = New System.Drawing.Size(267, 21)
+        Me.cbRole.TabIndex = 47
+        '
         'HomeSignup
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(726, 413)
+        Me.Controls.Add(Me.cbRole)
         Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.Label8)
-        Me.Controls.Add(Me.tbTier)
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.Label3)
@@ -226,8 +228,8 @@ Partial Class HomeSignup
     Friend WithEvents tbPassword As TextBox
     Friend WithEvents tbUsername As TextBox
     Friend WithEvents Splitter1 As Splitter
-    Friend WithEvents tbTier As TextBox
     Friend WithEvents Label8 As Label
     Friend WithEvents Label7 As Label
     Friend WithEvents Label6 As Label
+    Friend WithEvents cbRole As ComboBox
 End Class

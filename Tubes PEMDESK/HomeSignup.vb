@@ -26,10 +26,30 @@ Public Class HomeSignup
         If ds.Tables("checkacc").Rows.Count > 0 Then
             MessageBox.Show("Username telah dipakai")
         Else
-            da = New MySqlDataAdapter("insert into tbl_akun values (?,?,?)", conn)
+            Dim id_user As String
+            Dim kode As String
+            If cbRole.SelectedItem = "OWNER" Then
+                kode = "OWN"
+            ElseIf cbRole.SelectedItem = "KASIR" Then
+                kode = "KSR"
+            Else
+                kode = "ADM"
+            End If
+
+            ds.Clear()
+            da = New MySqlDataAdapter("SELECT CASE WHEN MAX(CAST(SUBSTRING(kode, 4, 3) AS UNSIGNED)) IS NULL
+                              THEN '" & kode & "001' ELSE CONCAT('" & kode & "',LPAD(MAX(CAST(SUBSTRING(kode, 4, 3) AS UNSIGNED)) + 1, 3, '0'))END AS NOMOR FROM tbl_akun WHERE
+                              kode LIKE '" & kode & "%';", conn)
+
+            da.Fill(ds, "xxx")
+            id_user = ds.Tables("xxx").Rows(0).Item(0).ToString
+
+
+            da = New MySqlDataAdapter("insert into tbl_akun values (?,?,?,?)", conn)
             da.SelectCommand.Parameters.AddWithValue("username", tbUsername.Text)
             da.SelectCommand.Parameters.AddWithValue("pass", tbPassword.Text)
-            da.SelectCommand.Parameters.AddWithValue("tier", tbTier.Text)
+            da.SelectCommand.Parameters.AddWithValue("tier", cbRole.Text)
+            da.SelectCommand.Parameters.AddWithValue("kode", id_user)
             ds.Clear()
             da.Fill(ds, "newacc")
             MessageBox.Show("Akun berhasil terdaftar")

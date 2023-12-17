@@ -20,4 +20,10 @@ Public Class FormReportBulanan
         End Try
 
     End Sub
+
+    Private Sub btBack_Click(sender As Object, e As EventArgs) Handles btBack.Click
+        Me.Hide()
+        LoginOwner.Show()
+        Me.Dispose()
+    End Sub
 End Class

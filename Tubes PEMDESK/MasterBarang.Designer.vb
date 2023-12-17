@@ -44,6 +44,8 @@ Partial Class MasterBarang
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.RbAcc = New System.Windows.Forms.RadioButton()
+        Me.btBack = New System.Windows.Forms.Button()
+        Me.btBersihkan = New System.Windows.Forms.Button()
         CType(Me.nudStock, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dgvBarang, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -168,7 +170,7 @@ Partial Class MasterBarang
         '
         Me.tbHarga.Location = New System.Drawing.Point(461, 56)
         Me.tbHarga.Name = "tbHarga"
-        Me.tbHarga.Size = New System.Drawing.Size(173, 20)
+        Me.tbHarga.Size = New System.Drawing.Size(152, 20)
         Me.tbHarga.TabIndex = 21
         '
         'tbNama
@@ -225,12 +227,32 @@ Partial Class MasterBarang
         Me.RbAcc.Text = "Accesories"
         Me.RbAcc.UseVisualStyleBackColor = True
         '
+        'btBack
+        '
+        Me.btBack.Location = New System.Drawing.Point(16, 417)
+        Me.btBack.Name = "btBack"
+        Me.btBack.Size = New System.Drawing.Size(75, 23)
+        Me.btBack.TabIndex = 31
+        Me.btBack.Text = "Back"
+        Me.btBack.UseVisualStyleBackColor = True
+        '
+        'btBersihkan
+        '
+        Me.btBersihkan.Location = New System.Drawing.Point(630, 53)
+        Me.btBersihkan.Name = "btBersihkan"
+        Me.btBersihkan.Size = New System.Drawing.Size(75, 23)
+        Me.btBersihkan.TabIndex = 32
+        Me.btBersihkan.Text = "Bersihkan"
+        Me.btBersihkan.UseVisualStyleBackColor = True
+        '
         'MasterBarang
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Orchid
         Me.ClientSize = New System.Drawing.Size(726, 460)
+        Me.Controls.Add(Me.btBersihkan)
+        Me.Controls.Add(Me.btBack)
         Me.Controls.Add(Me.RbAcc)
         Me.Controls.Add(Me.tb_totalItem)
         Me.Controls.Add(Me.Label6)
@@ -278,4 +300,6 @@ Partial Class MasterBarang
     Friend WithEvents Label3 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents RbAcc As RadioButton
+    Friend WithEvents btBack As Button
+    Friend WithEvents btBersihkan As Button
 End Class

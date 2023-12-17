@@ -1,14 +1,6 @@
 ﻿Imports MySql.Data.MySqlClient
 Public Class Home
-    Sub clear()
-        For Each ctr In Me.Controls
-            If TypeOf ctr Is TextBox Then
-                ctr.Text = ""
-            ElseIf TypeOf ctr Is ComboBox Then
-                DirectCast(ctr, ComboBox).SelectedItem = Nothing
-            End If
-        Next
-    End Sub
+
 
     Private Sub Home_Load(sender As Object, e As EventArgs) Handles Me.Load
         Try
@@ -28,8 +20,11 @@ Public Class Home
             da.Fill(ds, "akun")
 
             If ds.Tables("akun").Rows.Count > 0 Then
+                da = New MySqlDataAdapter("select kode from tbl_akun where username='" & user & "'", conn)
+                da.Fill(ds, "kode")
+                kodekaryawan = ds.Tables("kode").Rows(0).Item(0)
                 MessageBox.Show("Login Berhasil")
-                clear()
+                clear(Me)
                 da = New MySqlDataAdapter("select tier from tbl_akun where username='" & user & "'", conn)
                 da.Fill(ds, "tier")
                 Dim tier As String = ds.Tables(0).Rows(0)("tier").ToString()
@@ -47,7 +42,7 @@ Public Class Home
 
             Else
                 MessageBox.Show("Login Gagal!")
-                clear()
+                clear(Me)
             End If
 
         Catch ex As Exception

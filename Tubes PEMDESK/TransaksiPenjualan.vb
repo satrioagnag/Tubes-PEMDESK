@@ -163,10 +163,11 @@ Public Class TransaksiPenjualan
             If result = DialogResult.Yes Then
                 noInvoice = tbInvoice.Text
                 ds.Clear()
-                da = New MySqlDataAdapter("insert into tbl_transaksi Values (?,?,?)", conn)
+                da = New MySqlDataAdapter("insert into tbl_transaksi Values (?,?,?,?)", conn)
                 da.SelectCommand.Parameters.AddWithValue("no_invoice", tbInvoice.Text)
                 da.SelectCommand.Parameters.AddWithValue("total", grand)
                 da.SelectCommand.Parameters.AddWithValue("tanggal_transaksi", tanggalTransaksi)
+                da.SelectCommand.Parameters.AddWithValue("kode", kodekaryawan)
                 da.Fill(ds, "transaksi")
                 ds.Clear()
 
@@ -203,5 +204,8 @@ Public Class TransaksiPenjualan
 
     End Sub
 
-
+    Private Sub btBack_Click(sender As Object, e As EventArgs) Handles btBack.Click
+        Me.Hide()
+        LoginKasir.Show()
+    End Sub
 End Class

@@ -55,6 +55,7 @@ Partial Class TransaksiPenjualan
         Me.tbGrand = New System.Windows.Forms.TextBox()
         Me.Label13 = New System.Windows.Forms.Label()
         Me.btSelesai = New System.Windows.Forms.Button()
+        Me.btBack = New System.Windows.Forms.Button()
         CType(Me.dgvPenjualan, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -315,12 +316,21 @@ Partial Class TransaksiPenjualan
         '
         'btSelesai
         '
-        Me.btSelesai.Location = New System.Drawing.Point(529, 365)
+        Me.btSelesai.Location = New System.Drawing.Point(575, 363)
         Me.btSelesai.Name = "btSelesai"
         Me.btSelesai.Size = New System.Drawing.Size(113, 32)
         Me.btSelesai.TabIndex = 26
         Me.btSelesai.Text = "Buat Transaksi"
         Me.btSelesai.UseVisualStyleBackColor = True
+        '
+        'btBack
+        '
+        Me.btBack.Location = New System.Drawing.Point(486, 363)
+        Me.btBack.Name = "btBack"
+        Me.btBack.Size = New System.Drawing.Size(83, 32)
+        Me.btBack.TabIndex = 27
+        Me.btBack.Text = "Back"
+        Me.btBack.UseVisualStyleBackColor = True
         '
         'TransaksiPenjualan
         '
@@ -328,6 +338,7 @@ Partial Class TransaksiPenjualan
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(734, 413)
+        Me.Controls.Add(Me.btBack)
         Me.Controls.Add(Me.btSelesai)
         Me.Controls.Add(Me.Label13)
         Me.Controls.Add(Me.tbGrand)
@@ -396,4 +407,5 @@ Partial Class TransaksiPenjualan
     Friend WithEvents Jumlah As DataGridViewTextBoxColumn
     Friend WithEvents Total As DataGridViewTextBoxColumn
     Friend WithEvents btRemove As DataGridViewButtonColumn
+    Friend WithEvents btBack As Button
 End Class

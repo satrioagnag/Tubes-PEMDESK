@@ -10,6 +10,8 @@ Public Class MasterBarang
     Sub showitem()
         ds.Clear()
         da = New MySqlDataAdapter("SELECT COUNT(*) AS jumlah_barang FROM tbl_barang;", conn)
+        da.Fill(ds, "count")
+        tb_totalItem.Text = ds.Tables("count").Rows(0).Item(0)
     End Sub
     Sub clear()
         For Each ctr In Me.Controls
@@ -145,4 +147,15 @@ Public Class MasterBarang
             showitem()
         End If
     End Sub
+
+    Private Sub btBack_Click(sender As Object, e As EventArgs) Handles btBack.Click
+        Me.Hide()
+        LoginAdmin.Show()
+    End Sub
+
+    Private Sub btBersihkan_Click(sender As Object, e As EventArgs) Handles btBersihkan.Click
+        clear()
+    End Sub
+
+
 End Class
