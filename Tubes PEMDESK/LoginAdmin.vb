@@ -28,4 +28,9 @@ Public Class LoginAdmin
         Me.Hide()
         MasterBarang.Show()
     End Sub
+
+    Private Sub btn_riwayat_Click(sender As Object, e As EventArgs) Handles btn_riwayat.Click
+        Me.Hide()
+        PenjualanAdmin.Show()
+    End Sub
 End Class

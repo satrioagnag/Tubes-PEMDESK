@@ -142,6 +142,37 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSet1.xsd</DependentUpon>
     </Compile>
+    <Compile Include="bin\Debug\PenjualanAdmin.Designer.vb">
+      <DependentUpon>PenjualanAdmin.vb</DependentUpon>
+    </Compile>
+    <Compile Include="bin\Debug\PenjualanAdmin.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="bin\Debug\penjualanAdminCRSY.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>penjualanAdminCRSY.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="bin\Debug\PenjualanAdminDS.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PenjualanAdminDS.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="bin\Debug\ReportStockCR.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReportStockCR.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="bin\Debug\ReportStockDS.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReportStockDS.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="bin\Debug\ReportStockDS.vb">
+      <DependentUpon>ReportStockDS.xsd</DependentUpon>
+    </Compile>
     <Compile Include="bin\Debug\strukCrystal.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -151,6 +182,9 @@
     <Compile Include="bin\Debug\strukDataset.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
+      <DependentUpon>strukDataset.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="bin\Debug\strukDataset.vb">
       <DependentUpon>strukDataset.xsd</DependentUpon>
     </Compile>
     <Compile Include="FormReportBulanan.Designer.vb">
@@ -224,6 +258,12 @@
     <Compile Include="Pembayaran.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="ReportStock.Designer.vb">
+      <DependentUpon>ReportStock.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ReportStock.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="struk.Designer.vb">
       <DependentUpon>struk.vb</DependentUpon>
     </Compile>
@@ -241,6 +281,17 @@
     <EmbeddedResource Include="bin\Debug\CrystalReport1.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>CrystalReport1.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="bin\Debug\PenjualanAdmin.resx">
+      <DependentUpon>PenjualanAdmin.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="bin\Debug\penjualanAdminCRSY.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>penjualanAdminCRSY.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="bin\Debug\ReportStockCR.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ReportStockCR.vb</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="bin\Debug\strukCrystal.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
@@ -279,6 +330,9 @@
     <EmbeddedResource Include="Pembayaran.resx">
       <DependentUpon>Pembayaran.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ReportStock.resx">
+      <DependentUpon>ReportStock.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="struk.resx">
       <DependentUpon>struk.vb</DependentUpon>
     </EmbeddedResource>
@@ -297,6 +351,28 @@
     </None>
     <None Include="bin\Debug\DataSet1.xss">
       <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="bin\Debug\PenjualanAdminDS.xsc">
+      <DependentUpon>PenjualanAdminDS.xsd</DependentUpon>
+    </None>
+    <None Include="bin\Debug\PenjualanAdminDS.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PenjualanAdminDS.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="bin\Debug\PenjualanAdminDS.xss">
+      <DependentUpon>PenjualanAdminDS.xsd</DependentUpon>
+    </None>
+    <None Include="bin\Debug\ReportStockDS.xsc">
+      <DependentUpon>ReportStockDS.xsd</DependentUpon>
+    </None>
+    <None Include="bin\Debug\ReportStockDS.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ReportStockDS.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="bin\Debug\ReportStockDS.xss">
+      <DependentUpon>ReportStockDS.xsd</DependentUpon>
     </None>
     <None Include="bin\Debug\strukDataset.xsc">
       <DependentUpon>strukDataset.xsd</DependentUpon>
