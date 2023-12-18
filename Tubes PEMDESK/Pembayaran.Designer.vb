@@ -22,6 +22,7 @@ Partial Class Pembayaran
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.tbInvoice = New System.Windows.Forms.TextBox()
@@ -40,7 +41,9 @@ Partial Class Pembayaran
         Me.tbKembali = New System.Windows.Forms.TextBox()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.btSimpan = New System.Windows.Forms.Button()
+        Me.ErrorProvider1 = New System.Windows.Forms.ErrorProvider(Me.components)
         CType(Me.dgvPembelian, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label1
@@ -182,6 +185,10 @@ Partial Class Pembayaran
         Me.btSimpan.Text = "Simpan"
         Me.btSimpan.UseVisualStyleBackColor = True
         '
+        'ErrorProvider1
+        '
+        Me.ErrorProvider1.ContainerControl = Me
+        '
         'Pembayaran
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -205,6 +212,7 @@ Partial Class Pembayaran
         Me.Name = "Pembayaran"
         Me.Text = "Pembayaran"
         CType(Me.dgvPembelian, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -228,4 +236,5 @@ Partial Class Pembayaran
     Friend WithEvents harga As DataGridViewTextBoxColumn
     Friend WithEvents Jumlah As DataGridViewTextBoxColumn
     Friend WithEvents total As DataGridViewTextBoxColumn
+    Friend WithEvents ErrorProvider1 As ErrorProvider
 End Class

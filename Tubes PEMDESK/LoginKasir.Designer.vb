@@ -25,7 +25,6 @@ Partial Class LoginKasir
         Me.Label2 = New System.Windows.Forms.Label()
         Me.btnTransaksi = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.btnPembayaran = New System.Windows.Forms.Button()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.lb_Nama = New System.Windows.Forms.Label()
         Me.bt_logout = New System.Windows.Forms.Button()
@@ -78,26 +77,12 @@ Partial Class LoginKasir
         Me.Label1.Size = New System.Drawing.Size(0, 13)
         Me.Label1.TabIndex = 6
         '
-        'btnPembayaran
-        '
-        Me.btnPembayaran.BackColor = System.Drawing.Color.DeepPink
-        Me.btnPembayaran.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold)
-        Me.btnPembayaran.ForeColor = System.Drawing.SystemColors.ButtonFace
-        Me.btnPembayaran.Location = New System.Drawing.Point(25, 143)
-        Me.btnPembayaran.Margin = New System.Windows.Forms.Padding(2)
-        Me.btnPembayaran.Name = "btnPembayaran"
-        Me.btnPembayaran.Size = New System.Drawing.Size(196, 31)
-        Me.btnPembayaran.TabIndex = 5
-        Me.btnPembayaran.Text = "Pembayaran"
-        Me.btnPembayaran.UseVisualStyleBackColor = False
-        '
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.Panel1.Controls.Add(Me.lb_Nama)
         Me.Panel1.Controls.Add(Me.bt_logout)
         Me.Panel1.Controls.Add(Me.Label2)
-        Me.Panel1.Controls.Add(Me.btnPembayaran)
         Me.Panel1.Controls.Add(Me.btnTransaksi)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Left
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
@@ -236,7 +221,6 @@ Partial Class LoginKasir
     Friend WithEvents Label2 As Label
     Friend WithEvents btnTransaksi As Button
     Friend WithEvents Label1 As Label
-    Friend WithEvents btnPembayaran As Button
     Friend WithEvents Panel1 As Panel
     Friend WithEvents bt_logout As Button
     Friend WithEvents lb_Nama As Label

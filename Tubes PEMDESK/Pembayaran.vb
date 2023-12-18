@@ -46,15 +46,21 @@ Public Class Pembayaran
     Private Sub tbBayar_TextChanged(sender As Object, e As EventArgs) Handles tbBayar.TextChanged
         Dim kembali As Double
         Dim bayar As Double
-        bayar = tbBayar.Text
 
-        If bayar > grand Then
-            kembali = bayar - grand
-            tbKembali.Text = kembali
+        If tbBayar.Text = "" Then
+            ErrorProvider1.SetError(tbBayar, "")
         Else
-            kembali = 0
-            tbKembali.Text = kembali
+            bayar = tbBayar.Text
+
+            If bayar > grand Then
+                kembali = bayar - grand
+                tbKembali.Text = kembali
+            Else
+                kembali = 0
+                tbKembali.Text = kembali
+            End If
         End If
+
     End Sub
 
     Private Sub btSimpan_Click(sender As Object, e As EventArgs) Handles btSimpan.Click

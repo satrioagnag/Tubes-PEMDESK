@@ -22,6 +22,7 @@ Partial Class TransaksiPenjualan
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
@@ -56,7 +57,9 @@ Partial Class TransaksiPenjualan
         Me.Label13 = New System.Windows.Forms.Label()
         Me.btSelesai = New System.Windows.Forms.Button()
         Me.btBack = New System.Windows.Forms.Button()
+        Me.ErrorProvider1 = New System.Windows.Forms.ErrorProvider(Me.components)
         CType(Me.dgvPenjualan, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label1
@@ -332,6 +335,10 @@ Partial Class TransaksiPenjualan
         Me.btBack.Text = "Back"
         Me.btBack.UseVisualStyleBackColor = True
         '
+        'ErrorProvider1
+        '
+        Me.ErrorProvider1.ContainerControl = Me
+        '
         'TransaksiPenjualan
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -369,6 +376,7 @@ Partial Class TransaksiPenjualan
         Me.Name = "TransaksiPenjualan"
         Me.Text = "TransaksiPenjualan"
         CType(Me.dgvPenjualan, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -408,4 +416,5 @@ Partial Class TransaksiPenjualan
     Friend WithEvents Total As DataGridViewTextBoxColumn
     Friend WithEvents btRemove As DataGridViewButtonColumn
     Friend WithEvents btBack As Button
+    Friend WithEvents ErrorProvider1 As ErrorProvider
 End Class

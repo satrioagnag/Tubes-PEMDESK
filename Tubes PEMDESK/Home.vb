@@ -32,7 +32,6 @@ Public Class Home
                     Me.Hide()
                     LoginAdmin.Show()
                 ElseIf tier = "KASIR" Then
-
                     Me.Hide()
                     LoginKasir.Show()
                 Else

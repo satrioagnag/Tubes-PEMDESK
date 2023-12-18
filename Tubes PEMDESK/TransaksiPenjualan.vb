@@ -68,12 +68,17 @@ Public Class TransaksiPenjualan
     End Sub
 
     Private Sub tbJumlah_TextChanged(sender As Object, e As EventArgs) Handles tbJumlah.TextChanged
-        ds.Clear()
-        da = New MySqlDataAdapter("SELECT harga FROM tbl_barang WHERE nama_barang='" & nama_item & "'", conn)
-        da.Fill(ds, "harga")
-        jumlah_item = Integer.Parse(tbJumlah.Text)
-        total_item = jumlah_item * harga_item
-        tbTotal.Text = total_item
+        If tbJumlah.Text = "" Then
+            ErrorProvider1.SetError(tbJumlah, "")
+        Else
+            ds.Clear()
+            da = New MySqlDataAdapter("SELECT harga FROM tbl_barang WHERE nama_barang='" & nama_item & "'", conn)
+            da.Fill(ds, "harga")
+            jumlah_item = Integer.Parse(tbJumlah.Text)
+            total_item = jumlah_item * harga_item
+            tbTotal.Text = total_item
+        End If
+
     End Sub
 
     Private Sub btTambah_Click(sender As Object, e As EventArgs) Handles btTambah.Click
@@ -137,11 +142,16 @@ Public Class TransaksiPenjualan
     End Sub
 
     Private Sub tbDiskon_TextChanged(sender As Object, e As EventArgs) Handles tbDiskon.TextChanged
-        Dim diskon As Integer = CInt(tbDiskon.Text)
-        Dim diskonPercent As Double = diskon / 100
-        grand = 0
-        grand = subtotal - (subtotal * diskonPercent)
-        tbGrand.Text = grand
+        If tbDiskon.Text = "" Then
+            ErrorProvider1.SetError(tbDiskon, "")
+        Else
+            Dim diskon As Integer = CInt(tbDiskon.Text)
+            Dim diskonPercent As Double = diskon / 100
+            grand = 0
+            grand = subtotal - (subtotal * diskonPercent)
+            tbGrand.Text = grand
+        End If
+
     End Sub
 
     Private Sub cbMember_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbMember.SelectedIndexChanged

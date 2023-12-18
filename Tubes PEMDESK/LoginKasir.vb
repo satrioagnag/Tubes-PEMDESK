@@ -64,7 +64,7 @@ WHERE
         Me.Dispose()
     End Sub
 
-    Private Sub btnPembayaran_Click(sender As Object, e As EventArgs) Handles btnPembayaran.Click
+    Private Sub btnPembayaran_Click(sender As Object, e As EventArgs) 
         Me.Hide()
     End Sub
 
