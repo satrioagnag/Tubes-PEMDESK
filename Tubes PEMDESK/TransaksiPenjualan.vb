@@ -68,12 +68,16 @@ Public Class TransaksiPenjualan
     End Sub
 
     Private Sub tbJumlah_TextChanged(sender As Object, e As EventArgs) Handles tbJumlah.TextChanged
-        ds.Clear()
-        da = New MySqlDataAdapter("SELECT harga FROM tbl_barang WHERE nama_barang='" & nama_item & "'", conn)
-        da.Fill(ds, "harga")
-        jumlah_item = Integer.Parse(tbJumlah.Text)
-        total_item = jumlah_item * harga_item
-        tbTotal.Text = total_item
+        If tbJumlah.Text = "" Then
+            ErrorProvider1.SetError(tbJumlah, "")
+        Else
+            ds.Clear()
+            da = New MySqlDataAdapter("SELECT harga FROM tbl_barang WHERE nama_barang='" & nama_item & "'", conn)
+            da.Fill(ds, "harga")
+            jumlah_item = Integer.Parse(tbJumlah.Text)
+            total_item = jumlah_item * harga_item
+            tbTotal.Text = total_item
+        End If
     End Sub
 
     Private Sub btTambah_Click(sender As Object, e As EventArgs) Handles btTambah.Click
@@ -93,7 +97,7 @@ Public Class TransaksiPenjualan
             da.Fill(ds, "barang")
             Dim stock As Integer = Integer.Parse(ds.Tables("barang").Rows(0).Item("stock"))
 
-            If stock > 0 Then
+            If stock > jumlah_item Or stock = jumlah_item Then
                 stock -= jumlah_item
 
                 If existingRow IsNot Nothing Then
@@ -126,7 +130,7 @@ Public Class TransaksiPenjualan
                 da.Fill(ds, "stock")
 
             Else
-                MessageBox.Show("Stok habis")
+                MessageBox.Show("Stok habis/tidak cukup")
             End If
 
         Catch ex As Exception
@@ -137,11 +141,15 @@ Public Class TransaksiPenjualan
     End Sub
 
     Private Sub tbDiskon_TextChanged(sender As Object, e As EventArgs) Handles tbDiskon.TextChanged
-        Dim diskon As Integer = CInt(tbDiskon.Text)
-        Dim diskonPercent As Double = diskon / 100
-        grand = 0
-        grand = subtotal - (subtotal * diskonPercent)
-        tbGrand.Text = grand
+        If tbDiskon.Text = "" Then
+            ErrorProvider1.SetError(tbDiskon, "")
+        Else
+            Dim diskon As Integer = CInt(tbDiskon.Text)
+            Dim diskonPercent As Double = diskon / 100
+            grand = 0
+            grand = subtotal - (subtotal * diskonPercent)
+            tbGrand.Text = grand
+        End If
     End Sub
 
     Private Sub cbMember_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbMember.SelectedIndexChanged

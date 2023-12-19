@@ -31,4 +31,6 @@ Public Class LoginOwner
         Me.Hide()
         ReportStock.Show()
     End Sub
+
+
 End Class

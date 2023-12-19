@@ -22,31 +22,30 @@ Partial Class LoginOwner
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.Label2 = New System.Windows.Forms.Label()
         Me.Button3 = New System.Windows.Forms.Button()
         Me.bt_reportJual = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.bt_logout = New System.Windows.Forms.Button()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.PictureBox3 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
+        Me.Label2 = New System.Windows.Forms.Label()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.ForeColor = System.Drawing.Color.Black
-        Me.Label2.Location = New System.Drawing.Point(226, 49)
-        Me.Label2.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(75, 20)
-        Me.Label2.TabIndex = 12
-        Me.Label2.Text = "OWNER"
         '
         'Button3
         '
         Me.Button3.BackColor = System.Drawing.Color.DeepPink
-        Me.Button3.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button3.BackgroundImage = Global.Tubes_PEMDESK.My.Resources.Resources.hot_pink_gradient_7cbldqv6xt26lme0
+        Me.Button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Button3.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.Button3.Font = New System.Drawing.Font("Bobby Jones Soft Regular", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button3.ForeColor = System.Drawing.SystemColors.ButtonFace
-        Me.Button3.Location = New System.Drawing.Point(168, 207)
+        Me.Button3.Location = New System.Drawing.Point(290, 235)
         Me.Button3.Margin = New System.Windows.Forms.Padding(2)
         Me.Button3.Name = "Button3"
         Me.Button3.Size = New System.Drawing.Size(196, 36)
@@ -57,9 +56,12 @@ Partial Class LoginOwner
         'bt_reportJual
         '
         Me.bt_reportJual.BackColor = System.Drawing.Color.DeepPink
-        Me.bt_reportJual.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.bt_reportJual.BackgroundImage = Global.Tubes_PEMDESK.My.Resources.Resources.hot_pink_gradient_7cbldqv6xt26lme0
+        Me.bt_reportJual.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.bt_reportJual.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.bt_reportJual.Font = New System.Drawing.Font("Bobby Jones Soft Regular", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.bt_reportJual.ForeColor = System.Drawing.SystemColors.ButtonFace
-        Me.bt_reportJual.Location = New System.Drawing.Point(168, 154)
+        Me.bt_reportJual.Location = New System.Drawing.Point(290, 182)
         Me.bt_reportJual.Margin = New System.Windows.Forms.Padding(2)
         Me.bt_reportJual.Name = "bt_reportJual"
         Me.bt_reportJual.Size = New System.Drawing.Size(196, 36)
@@ -70,9 +72,12 @@ Partial Class LoginOwner
         'Button1
         '
         Me.Button1.BackColor = System.Drawing.Color.DeepPink
-        Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button1.BackgroundImage = Global.Tubes_PEMDESK.My.Resources.Resources.hot_pink_gradient_7cbldqv6xt26lme0
+        Me.Button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.Button1.Font = New System.Drawing.Font("Bobby Jones Soft Regular", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button1.ForeColor = System.Drawing.SystemColors.ButtonFace
-        Me.Button1.Location = New System.Drawing.Point(168, 102)
+        Me.Button1.Location = New System.Drawing.Point(290, 130)
         Me.Button1.Margin = New System.Windows.Forms.Padding(2)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(196, 36)
@@ -83,34 +88,125 @@ Partial Class LoginOwner
         'bt_logout
         '
         Me.bt_logout.BackColor = System.Drawing.Color.Red
-        Me.bt_logout.Location = New System.Drawing.Point(12, 257)
+        Me.bt_logout.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.bt_logout.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.bt_logout.ForeColor = System.Drawing.Color.WhiteSmoke
+        Me.bt_logout.Location = New System.Drawing.Point(21, 305)
         Me.bt_logout.Name = "bt_logout"
         Me.bt_logout.Size = New System.Drawing.Size(75, 23)
         Me.bt_logout.TabIndex = 13
         Me.bt_logout.Text = "Logout"
         Me.bt_logout.UseVisualStyleBackColor = False
         '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.BackColor = System.Drawing.Color.Transparent
+        Me.Label1.Font = New System.Drawing.Font("Britannic Bold", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.ForeColor = System.Drawing.Color.WhiteSmoke
+        Me.Label1.Location = New System.Drawing.Point(47, 42)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(172, 23)
+        Me.Label1.TabIndex = 55
+        Me.Label1.Text = "Selamat Datang!!"
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.BackColor = System.Drawing.Color.Transparent
+        Me.PictureBox1.Image = Global.Tubes_PEMDESK.My.Resources.Resources.Desain_tanpa_judul__23_
+        Me.PictureBox1.Location = New System.Drawing.Point(45, 112)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(174, 168)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox1.TabIndex = 54
+        Me.PictureBox1.TabStop = False
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.BackColor = System.Drawing.Color.Transparent
+        Me.Label3.Font = New System.Drawing.Font("Britannic Bold", 24.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.ForeColor = System.Drawing.Color.WhiteSmoke
+        Me.Label3.Location = New System.Drawing.Point(73, 65)
+        Me.Label3.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(117, 36)
+        Me.Label3.TabIndex = 53
+        Me.Label3.Text = "OWNER"
+        '
+        'PictureBox3
+        '
+        Me.PictureBox3.BackColor = System.Drawing.Color.Transparent
+        Me.PictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.PictureBox3.Image = Global.Tubes_PEMDESK.My.Resources.Resources.vira_collection
+        Me.PictureBox3.Location = New System.Drawing.Point(463, 192)
+        Me.PictureBox3.Name = "PictureBox3"
+        Me.PictureBox3.Size = New System.Drawing.Size(182, 166)
+        Me.PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBox3.TabIndex = 56
+        Me.PictureBox3.TabStop = False
+        Me.PictureBox3.UseWaitCursor = True
+        '
+        'PictureBox2
+        '
+        Me.PictureBox2.BackColor = System.Drawing.Color.Transparent
+        Me.PictureBox2.Image = Global.Tubes_PEMDESK.My.Resources.Resources.vira_collection__900_x_500_piksel_
+        Me.PictureBox2.Location = New System.Drawing.Point(182, -13)
+        Me.PictureBox2.Name = "PictureBox2"
+        Me.PictureBox2.Size = New System.Drawing.Size(425, 146)
+        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBox2.TabIndex = 57
+        Me.PictureBox2.TabStop = False
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.BackColor = System.Drawing.Color.Transparent
+        Me.Label2.Font = New System.Drawing.Font("Britannic Bold", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.ForeColor = System.Drawing.Color.WhiteSmoke
+        Me.Label2.Location = New System.Drawing.Point(333, 95)
+        Me.Label2.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(108, 23)
+        Me.Label2.TabIndex = 58
+        Me.Label2.Text = "Pilih Menu"
+        '
         'LoginOwner
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Orchid
-        Me.ClientSize = New System.Drawing.Size(533, 292)
-        Me.Controls.Add(Me.bt_logout)
+        Me.BackgroundImage = Global.Tubes_PEMDESK.My.Resources.Resources.download__3_
+        Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.ClientSize = New System.Drawing.Size(634, 351)
         Me.Controls.Add(Me.Label2)
+        Me.Controls.Add(Me.Label1)
+        Me.Controls.Add(Me.PictureBox1)
+        Me.Controls.Add(Me.Label3)
+        Me.Controls.Add(Me.bt_logout)
         Me.Controls.Add(Me.Button3)
         Me.Controls.Add(Me.bt_reportJual)
         Me.Controls.Add(Me.Button1)
+        Me.Controls.Add(Me.PictureBox3)
+        Me.Controls.Add(Me.PictureBox2)
         Me.Name = "LoginOwner"
         Me.Text = "LoginOwner"
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
-
-    Friend WithEvents Label2 As Label
     Friend WithEvents Button3 As Button
     Friend WithEvents bt_reportJual As Button
     Friend WithEvents Button1 As Button
     Friend WithEvents bt_logout As Button
+    Friend WithEvents Label1 As Label
+    Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents Label3 As Label
+    Friend WithEvents PictureBox3 As PictureBox
+    Friend WithEvents PictureBox2 As PictureBox
+    Friend WithEvents Label2 As Label
 End Class

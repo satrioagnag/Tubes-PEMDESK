@@ -42,38 +42,52 @@ Public Class Pembayaran
 
 
     End Sub
-
+    Dim cek As Boolean = True
+    Dim lunas As Boolean = True
     Private Sub tbBayar_TextChanged(sender As Object, e As EventArgs) Handles tbBayar.TextChanged
         Dim kembali As Double
         Dim bayar As Double
-        bayar = tbBayar.Text
 
-        If bayar > grand Then
-            kembali = bayar - grand
-            tbKembali.Text = kembali
+        If tbBayar.Text = "" Then
+            ErrorProvider1.SetError(tbBayar, "")
         Else
-            kembali = 0
-            tbKembali.Text = kembali
+            bayar = tbBayar.Text
+
+            If bayar > grand Or bayar = grand Then
+                kembali = bayar - grand
+                tbKembali.Text = kembali
+                lunas = True
+            Else
+                kembali = bayar - grand
+                tbKembali.Text = kembali
+                lunas = False
+            End If
         End If
+
     End Sub
 
     Private Sub btSimpan_Click(sender As Object, e As EventArgs) Handles btSimpan.Click
         Try
-            method = cbMethod.SelectedItem
-            jumlah_bayar = tbBayar.Text
-            kembalian = tbKembali.Text
-            ds.Clear()
-            da = New MySqlDataAdapter("insert into tbl_pembayaran (no_invoice, method_bayar, jumlah_bayar, kembalian) values (?,?,?,?)", conn)
-            da.SelectCommand.Parameters.AddWithValue("no_invoice", noInvoice)
-            da.SelectCommand.Parameters.AddWithValue("method_bayar", method)
-            da.SelectCommand.Parameters.AddWithValue("jumlah_bayar", jumlah_bayar)
-            da.SelectCommand.Parameters.AddWithValue("kembalian", kembalian)
-            da.Fill(ds, "bayar")
+            If lunas = True Then
+                method = cbMethod.SelectedItem
+                jumlah_bayar = tbBayar.Text
+                kembalian = tbKembali.Text
+                ds.Clear()
+                da = New MySqlDataAdapter("insert into tbl_pembayaran (no_invoice, method_bayar, jumlah_bayar, kembalian) values (?,?,?,?)", conn)
+                da.SelectCommand.Parameters.AddWithValue("no_invoice", noInvoice)
+                da.SelectCommand.Parameters.AddWithValue("method_bayar", method)
+                da.SelectCommand.Parameters.AddWithValue("jumlah_bayar", jumlah_bayar)
+                da.SelectCommand.Parameters.AddWithValue("kembalian", kembalian)
+                da.Fill(ds, "bayar")
 
-            Me.Hide()
-            LoginKasir.Show()
-            Me.Dispose()
-            struk.Show()
+                Me.Hide()
+                LoginKasir.Show()
+                Me.Dispose()
+                struk.Show()
+            ElseIf lunas = False Then
+                MessageBox.Show("Pembayaran Kurang")
+            End If
+
         Catch ex As Exception
             MessageBox.Show(ex.Message, "Terjadi Kesalahan", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try

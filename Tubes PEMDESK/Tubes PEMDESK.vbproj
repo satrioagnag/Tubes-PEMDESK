@@ -468,6 +468,15 @@
     <Content Include="My Project\bin\Debug\Tubes PEMDESK.pdb" />
     <Content Include="My Project\bin\Debug\Tubes PEMDESK.xml" />
     <Content Include="My Project\bin\Debug\ZstdSharp.dll" />
+    <None Include="Resources\Desain tanpa judul %2823%29.png" />
+    <None Include="Resources\Desain tanpa judul %2822%29.png" />
+    <None Include="Resources\hot-pink-gradient-7cbldqv6xt26lme0.jpg" />
+    <None Include="Resources\Desain tanpa judul %2821%29.png" />
+    <None Include="Resources\vira collection %28900 x 500 piksel%291.png" />
+    <None Include="Resources\vira collection %28900 x 500 piksel%29.png" />
+    <None Include="Resources\vira collection.png" />
+    <None Include="Resources\download %283%29.jpg" />
+    <None Include="Resources\Desain tanpa judul %2820%29.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="bin\Release\" />

@@ -22,6 +22,7 @@ Partial Class MasterBarang
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(MasterBarang))
         Me.Label1 = New System.Windows.Forms.Label()
         Me.tb_totalItem = New System.Windows.Forms.TextBox()
         Me.Label6 = New System.Windows.Forms.Label()
@@ -46,23 +47,27 @@ Partial Class MasterBarang
         Me.RbAcc = New System.Windows.Forms.RadioButton()
         Me.btBack = New System.Windows.Forms.Button()
         Me.btBersihkan = New System.Windows.Forms.Button()
+        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         CType(Me.nudStock, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dgvBarang, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.Label1.Location = New System.Drawing.Point(289, 9)
+        Me.Label1.BackColor = System.Drawing.Color.Transparent
+        Me.Label1.Font = New System.Drawing.Font("Britannic Bold", 15.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.ForeColor = System.Drawing.Color.White
+        Me.Label1.Location = New System.Drawing.Point(311, 42)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(127, 20)
+        Me.Label1.Size = New System.Drawing.Size(145, 23)
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "Master Barang"
         '
         'tb_totalItem
         '
-        Me.tb_totalItem.Location = New System.Drawing.Point(614, 420)
+        Me.tb_totalItem.Location = New System.Drawing.Point(626, 444)
         Me.tb_totalItem.Name = "tb_totalItem"
         Me.tb_totalItem.Size = New System.Drawing.Size(100, 20)
         Me.tb_totalItem.TabIndex = 29
@@ -70,24 +75,30 @@ Partial Class MasterBarang
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(535, 424)
+        Me.Label6.BackColor = System.Drawing.Color.Transparent
+        Me.Label6.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.ForeColor = System.Drawing.Color.White
+        Me.Label6.Location = New System.Drawing.Point(547, 448)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(54, 13)
+        Me.Label6.Size = New System.Drawing.Size(62, 15)
         Me.Label6.TabIndex = 28
         Me.Label6.Text = "Total Item"
         '
         'nudStock
         '
-        Me.nudStock.Location = New System.Drawing.Point(461, 108)
+        Me.nudStock.Location = New System.Drawing.Point(473, 135)
         Me.nudStock.Name = "nudStock"
         Me.nudStock.Size = New System.Drawing.Size(71, 20)
         Me.nudStock.TabIndex = 27
         '
         'dgvBarang
         '
+        Me.dgvBarang.BackgroundColor = System.Drawing.Color.Pink
+        Me.dgvBarang.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.dgvBarang.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvBarang.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.id_barang, Me.nama_barang, Me.Harga, Me.Stock, Me.btUbah, Me.btHapus})
-        Me.dgvBarang.Location = New System.Drawing.Point(16, 146)
+        Me.dgvBarang.GridColor = System.Drawing.Color.PaleVioletRed
+        Me.dgvBarang.Location = New System.Drawing.Point(28, 173)
         Me.dgvBarang.Name = "dgvBarang"
         Me.dgvBarang.Size = New System.Drawing.Size(698, 250)
         Me.dgvBarang.TabIndex = 26
@@ -128,7 +139,12 @@ Partial Class MasterBarang
         '
         'btnUpdate
         '
-        Me.btnUpdate.Location = New System.Drawing.Point(630, 107)
+        Me.btnUpdate.BackgroundImage = CType(resources.GetObject("btnUpdate.BackgroundImage"), System.Drawing.Image)
+        Me.btnUpdate.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btnUpdate.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnUpdate.ForeColor = System.Drawing.Color.White
+        Me.btnUpdate.Location = New System.Drawing.Point(642, 134)
         Me.btnUpdate.Name = "btnUpdate"
         Me.btnUpdate.Size = New System.Drawing.Size(75, 23)
         Me.btnUpdate.TabIndex = 25
@@ -137,7 +153,12 @@ Partial Class MasterBarang
         '
         'btnSimpan
         '
-        Me.btnSimpan.Location = New System.Drawing.Point(538, 107)
+        Me.btnSimpan.BackgroundImage = CType(resources.GetObject("btnSimpan.BackgroundImage"), System.Drawing.Image)
+        Me.btnSimpan.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btnSimpan.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btnSimpan.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnSimpan.ForeColor = System.Drawing.Color.White
+        Me.btnSimpan.Location = New System.Drawing.Point(550, 134)
         Me.btnSimpan.Name = "btnSimpan"
         Me.btnSimpan.Size = New System.Drawing.Size(75, 23)
         Me.btnSimpan.TabIndex = 24
@@ -147,35 +168,41 @@ Partial Class MasterBarang
         'rbBawahan
         '
         Me.rbBawahan.AutoSize = True
-        Me.rbBawahan.Location = New System.Drawing.Point(221, 94)
+        Me.rbBawahan.BackColor = System.Drawing.Color.Transparent
+        Me.rbBawahan.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.rbBawahan.ForeColor = System.Drawing.Color.White
+        Me.rbBawahan.Location = New System.Drawing.Point(233, 121)
         Me.rbBawahan.Name = "rbBawahan"
-        Me.rbBawahan.Size = New System.Drawing.Size(70, 17)
+        Me.rbBawahan.Size = New System.Drawing.Size(74, 19)
         Me.rbBawahan.TabIndex = 23
         Me.rbBawahan.TabStop = True
         Me.rbBawahan.Text = "Bawahan"
-        Me.rbBawahan.UseVisualStyleBackColor = True
+        Me.rbBawahan.UseVisualStyleBackColor = False
         '
         'rbAtasan
         '
         Me.rbAtasan.AutoSize = True
-        Me.rbAtasan.Location = New System.Drawing.Point(128, 94)
+        Me.rbAtasan.BackColor = System.Drawing.Color.Transparent
+        Me.rbAtasan.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.rbAtasan.ForeColor = System.Drawing.Color.White
+        Me.rbAtasan.Location = New System.Drawing.Point(140, 121)
         Me.rbAtasan.Name = "rbAtasan"
-        Me.rbAtasan.Size = New System.Drawing.Size(58, 17)
+        Me.rbAtasan.Size = New System.Drawing.Size(62, 19)
         Me.rbAtasan.TabIndex = 22
         Me.rbAtasan.TabStop = True
         Me.rbAtasan.Text = "Atasan"
-        Me.rbAtasan.UseVisualStyleBackColor = True
+        Me.rbAtasan.UseVisualStyleBackColor = False
         '
         'tbHarga
         '
-        Me.tbHarga.Location = New System.Drawing.Point(461, 56)
+        Me.tbHarga.Location = New System.Drawing.Point(473, 83)
         Me.tbHarga.Name = "tbHarga"
         Me.tbHarga.Size = New System.Drawing.Size(152, 20)
         Me.tbHarga.TabIndex = 21
         '
         'tbNama
         '
-        Me.tbNama.Location = New System.Drawing.Point(133, 56)
+        Me.tbNama.Location = New System.Drawing.Point(145, 83)
         Me.tbNama.Name = "tbNama"
         Me.tbNama.Size = New System.Drawing.Size(229, 20)
         Me.tbNama.TabIndex = 20
@@ -183,74 +210,111 @@ Partial Class MasterBarang
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(406, 112)
+        Me.Label5.BackColor = System.Drawing.Color.Transparent
+        Me.Label5.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.ForeColor = System.Drawing.Color.White
+        Me.Label5.Location = New System.Drawing.Point(418, 139)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(35, 13)
+        Me.Label5.Size = New System.Drawing.Size(36, 15)
         Me.Label5.TabIndex = 19
         Me.Label5.Text = "Stock"
         '
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(406, 59)
+        Me.Label4.BackColor = System.Drawing.Color.Transparent
+        Me.Label4.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.ForeColor = System.Drawing.Color.White
+        Me.Label4.Location = New System.Drawing.Point(418, 86)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(36, 13)
+        Me.Label4.Size = New System.Drawing.Size(38, 15)
         Me.Label4.TabIndex = 18
         Me.Label4.Text = "Harga"
         '
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(13, 112)
+        Me.Label3.BackColor = System.Drawing.Color.Transparent
+        Me.Label3.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.ForeColor = System.Drawing.Color.White
+        Me.Label3.Location = New System.Drawing.Point(25, 139)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(31, 13)
+        Me.Label3.Size = New System.Drawing.Size(33, 15)
         Me.Label3.TabIndex = 17
         Me.Label3.Text = "Jenis"
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(13, 59)
+        Me.Label2.BackColor = System.Drawing.Color.Transparent
+        Me.Label2.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.ForeColor = System.Drawing.Color.White
+        Me.Label2.Location = New System.Drawing.Point(25, 86)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(97, 13)
+        Me.Label2.Size = New System.Drawing.Size(111, 15)
         Me.Label2.TabIndex = 16
         Me.Label2.Text = "Nama Barang/Item"
         '
         'RbAcc
         '
         Me.RbAcc.AutoSize = True
-        Me.RbAcc.Location = New System.Drawing.Point(128, 123)
+        Me.RbAcc.BackColor = System.Drawing.Color.Transparent
+        Me.RbAcc.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.RbAcc.ForeColor = System.Drawing.Color.White
+        Me.RbAcc.Location = New System.Drawing.Point(140, 150)
         Me.RbAcc.Name = "RbAcc"
-        Me.RbAcc.Size = New System.Drawing.Size(77, 17)
+        Me.RbAcc.Size = New System.Drawing.Size(82, 19)
         Me.RbAcc.TabIndex = 30
         Me.RbAcc.TabStop = True
         Me.RbAcc.Text = "Accesories"
-        Me.RbAcc.UseVisualStyleBackColor = True
+        Me.RbAcc.UseVisualStyleBackColor = False
         '
         'btBack
         '
-        Me.btBack.Location = New System.Drawing.Point(16, 417)
+        Me.btBack.BackColor = System.Drawing.Color.Red
+        Me.btBack.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btBack.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btBack.ForeColor = System.Drawing.Color.White
+        Me.btBack.Location = New System.Drawing.Point(28, 441)
         Me.btBack.Name = "btBack"
         Me.btBack.Size = New System.Drawing.Size(75, 23)
         Me.btBack.TabIndex = 31
         Me.btBack.Text = "Back"
-        Me.btBack.UseVisualStyleBackColor = True
+        Me.btBack.UseVisualStyleBackColor = False
         '
         'btBersihkan
         '
-        Me.btBersihkan.Location = New System.Drawing.Point(630, 53)
+        Me.btBersihkan.BackgroundImage = CType(resources.GetObject("btBersihkan.BackgroundImage"), System.Drawing.Image)
+        Me.btBersihkan.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btBersihkan.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.btBersihkan.Font = New System.Drawing.Font("Calibri", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btBersihkan.ForeColor = System.Drawing.Color.White
+        Me.btBersihkan.Location = New System.Drawing.Point(642, 80)
         Me.btBersihkan.Name = "btBersihkan"
         Me.btBersihkan.Size = New System.Drawing.Size(75, 23)
         Me.btBersihkan.TabIndex = 32
         Me.btBersihkan.Text = "Bersihkan"
         Me.btBersihkan.UseVisualStyleBackColor = True
         '
+        'PictureBox2
+        '
+        Me.PictureBox2.BackColor = System.Drawing.Color.Transparent
+        Me.PictureBox2.Image = Global.Tubes_PEMDESK.My.Resources.Resources.vira_collection__900_x_500_piksel_
+        Me.PictureBox2.Location = New System.Drawing.Point(184, -45)
+        Me.PictureBox2.Name = "PictureBox2"
+        Me.PictureBox2.Size = New System.Drawing.Size(425, 146)
+        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBox2.TabIndex = 58
+        Me.PictureBox2.TabStop = False
+        '
         'MasterBarang
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Orchid
-        Me.ClientSize = New System.Drawing.Size(726, 460)
+        Me.BackgroundImage = Global.Tubes_PEMDESK.My.Resources.Resources.download__3_
+        Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.ClientSize = New System.Drawing.Size(759, 491)
         Me.Controls.Add(Me.btBersihkan)
         Me.Controls.Add(Me.btBack)
         Me.Controls.Add(Me.RbAcc)
@@ -269,10 +333,12 @@ Partial Class MasterBarang
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
+        Me.Controls.Add(Me.PictureBox2)
         Me.Name = "MasterBarang"
         Me.Text = "MasterBarang"
         CType(Me.nudStock, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.dgvBarang, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -302,4 +368,5 @@ Partial Class MasterBarang
     Friend WithEvents RbAcc As RadioButton
     Friend WithEvents btBack As Button
     Friend WithEvents btBersihkan As Button
+    Friend WithEvents PictureBox2 As PictureBox
 End Class

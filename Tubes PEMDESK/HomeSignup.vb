@@ -1,12 +1,5 @@
 ﻿Imports MySql.Data.MySqlClient
 Public Class HomeSignup
-    Dim conn As New MySqlConnection
-    Dim da As New MySqlDataAdapter
-    Dim ds As New DataSet
-
-    Sub koneksi()
-        conn = New MySqlConnection("server= localhost" + ";user id=root" + "; password=" + "" + ";database=db_tubes")
-    End Sub
 
     Sub clear()
         For Each ctr In Me.Controls
@@ -21,10 +14,29 @@ Public Class HomeSignup
     Private Sub btSignup_Click(sender As Object, e As EventArgs) Handles btSignup.Click
         koneksi()
         ds.Clear()
+
+        Dim cek As Boolean = True
+        If tbUsername.Text = "" Then
+            ErrorProvider1.SetError(tbUsername, "Username Belum Diisi !")
+            cek = False
+        End If
+
+        If tbPassword.Text = "" Then
+            ErrorProvider1.SetError(tbPassword, "Password Belum Diisi !")
+            cek = False
+        End If
+
+        If cbRole.Text = "" Then
+            ErrorProvider1.SetError(cbRole, "Role Belum Diisi!")
+            cek = False
+        End If
+
         da = New MySqlDataAdapter("select * from tbl_akun where username='" & tbUsername.Text & "'", conn)
         da.Fill(ds, "checkacc")
         If ds.Tables("checkacc").Rows.Count > 0 Then
             MessageBox.Show("Username telah dipakai")
+        ElseIf cek = False Then
+            MessageBox.Show("Data belum lengkap")
         Else
             Dim id_user As String
             Dim kode As String
@@ -60,5 +72,12 @@ Public Class HomeSignup
         Me.Hide()
         Home.Show()
 
+    End Sub
+
+    Private Sub tbUsername_KeyPress(sender As Object, e As KeyPressEventArgs) Handles tbUsername.KeyPress
+        If Char.IsWhiteSpace(e.KeyChar) Or Char.IsPunctuation(e.KeyChar) Then
+            MsgBox("Spasi/Tanda Baca tidak diperbolehkan")
+            e.Handled = True
+        End If
     End Sub
 End Class

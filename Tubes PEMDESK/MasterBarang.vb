@@ -151,6 +151,7 @@ Public Class MasterBarang
     Private Sub btBack_Click(sender As Object, e As EventArgs) Handles btBack.Click
         Me.Hide()
         LoginAdmin.Show()
+        Me.Dispose()
     End Sub
 
     Private Sub btBersihkan_Click(sender As Object, e As EventArgs) Handles btBersihkan.Click
